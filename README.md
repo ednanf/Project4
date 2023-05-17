@@ -8,3 +8,5 @@ To fix the issue, simply add the line below viewDidLoad():
 webView.scrollView.contentInsetAdjustmentBehavior = .automatic
 
 Now, the scrolling works as intended.
+
+Note: These instructions assume you used webView as the instance of WKWebView (like the original instructions)
