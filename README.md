@@ -7,4 +7,4 @@ To fix the issue, simply add the line below viewDidLoad():
 
 webView.scrollView.contentInsetAdjustmentBehavior = .automatic
 
-Now, the scrolling works as it should.
+Now, the scrolling works as intended.
