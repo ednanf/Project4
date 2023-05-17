@@ -1,4 +1,4 @@
-# Project4
+# Project4 (with scrolling working properly)
 HackingWithSwift Project 4: Easy Browser
 
 The original instructions aren't working properly with the newest Xcode/iOS.
