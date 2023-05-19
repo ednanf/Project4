@@ -110,12 +110,18 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     decisionHandler(.allow)     // we call the decisionHandler closure with a positive response.
                     return
                 }
-            }
+            }                                   // ***CHALLENGE 1*** if host != url?.host:
+            urlNotAllowed()                     // call the alert message.
         }
         decisionHandler(.cancel)                 // If the if let fails, we call closure with a negative response.
     }
    
-    
-    
+    // ***CHALLENGE 1***: If users try to visit a URL that isn’t allowed, show an alert saying it’s blocked.
+    // Alert prompt.
+    @objc func urlNotAllowed() {
+        let alertName = UIAlertController(title: "Warning!", message: "This website is not allowed.", preferredStyle: .alert)
+        alertName.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alertName, animated: true)
+    }
     
 }
