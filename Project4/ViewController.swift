@@ -54,8 +54,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)     // Can't be tapped, so it doesn't need target and action.
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))       // Calls the reload() method.
         let progressBar = UIBarButtonItem(customView: progressView)     // Wraps the UIProgressView in a UIBarButtonItem to be inserted in the toolbar
+        // ***CHALLENGE 2***: Try making two new toolbar items with the titles Back and Forward.
+        // Since we are using a system symbol, we must call UIImage(systemName:)!
+        let goBack = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style:.plain, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(image: UIImage(systemName: "chevron.forward"), style: .plain, target: webView, action: #selector(webView.goForward))
         
-        toolbarItems = [spacer, progressBar, spacer, refresh]        // Toolbar associated with the view controller.
+        toolbarItems = [goBack, goForward, spacer, progressBar, spacer, refresh]        // Toolbar associated with the view controller.
         navigationController?.isToolbarHidden = false       // Forces showing the toolbar.
     }
     
